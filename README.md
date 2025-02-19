@@ -40,6 +40,19 @@ For improved performance, allocate more resources if your host system supports i
 
 ## Steps for Installing the Exasol Community Edition
 
+## Exasol Video Guides
+
+### Community Edition Walk-through
+[![Community Edition Walk-through](https://img.youtube.com/vi/LcGZZua6euA/0.jpg)](https://www.youtube.com/watch?v=LcGZZua6euA&list=PLONUtVeiXPifDvdfQgMw_CRqQB_60ROZ8&index=2)
+
+### Windows Installation Guide
+[![Windows Installation](https://img.youtube.com/vi/Q3Er0tvO0t4/0.jpg)](https://www.youtube.com/watch?v=Q3Er0tvO0t4&list=PLONUtVeiXPifDvdfQgMw_CRqQB_60ROZ8&index=3)
+
+### Mac Installation Guide
+[![Mac Installation](https://img.youtube.com/vi/aDivytGirWc/0.jpg)](https://www.youtube.com/watch?v=aDivytGirWc&list=PLONUtVeiXPifDvdfQgMw_CRqQB_60ROZ8&index=2)
+
+
+
 ### 1. Install VirtualBox
 
 VirtualBox is a hypervisor that allows you to run virtual machines. Follow the instructions below to install VirtualBox for your operating system:
