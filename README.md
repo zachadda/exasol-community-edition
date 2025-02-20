@@ -34,9 +34,9 @@ To run the Community Edition, your system must meet the following minimum requir
 - **Disk**: 50GB
 - **Processor**: 4 vCPUs (default: 8 vCPUs)
 - **Memory**: 8 GB RAM (default: 16 GB RAM)
-- **Hypervisor**: VirtualBox or a similar virtualization platform
+- **Hypervisor**: VMware Workstation Pro (Windows), VMware Fusion Pro (macOS), Oracle VirtualBox, or a similar virtualization platform
 
-For improved performance, allocate more resources if your host system supports it. The default configuration uses 8 vCPUs and 16 GB RAM for a better experience.
+For improved performance, allocate more resources if your host system supports it. The default configuration uses 4 vCPUs and 8 GB RAM for a better experience.
 
 ## Steps for Installing the Exasol Community Edition
 
