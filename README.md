@@ -4,6 +4,8 @@
 
 The Community Edition is a fully functional Exasol v8 database, packaged for easy installation and use on a desktop or laptop environment. It is designed to give users a hands-on introduction to Exasol's high-performance capabilities in a non-production setting.
 
+Go to the [Exasol Community Edition download page](https://www.exasol.com/free-signup-community-edition/).
+
 ## Key Features
 
 - **Fully functioning Exasol v8 database**: Experience the core functionality of the Exasol database without restrictions on features.
@@ -43,17 +45,96 @@ For improved performance, allocate more resources if your host system supports i
 ## Exasol Video Guides
 
 ### Community Edition Walk-through
-[![Community Edition Walk-through](https://img.youtube.com/vi/LcGZZua6euA/0.jpg)](https://www.youtube.com/watch?v=LcGZZua6euA&list=PLONUtVeiXPifDvdfQgMw_CRqQB_60ROZ8&index=2)
+[![Community Edition Walk-through](https://img.youtube.com/vi/DRziQydJHkw/0.jpg)](https://youtu.be/DRziQydJHkw)
 
 ### Windows Installation Guide
-[![Windows Installation](https://img.youtube.com/vi/Q3Er0tvO0t4/0.jpg)](https://www.youtube.com/watch?v=Q3Er0tvO0t4&list=PLONUtVeiXPifDvdfQgMw_CRqQB_60ROZ8&index=3)
+[![Virtualbox](https://img.youtube.com/vi/36KTaVo8Q4Q/0.jpg)](https://youtu.be/36KTaVo8Q4Q)
+
+[![VMware Workstation](https://img.youtube.com/vi/byXpFSIpeLE/0.jpg)](https://youtu.be/byXpFSIpeLE)
+
 
 ### Mac Installation Guide
-[![Mac Installation](https://img.youtube.com/vi/aDivytGirWc/0.jpg)](https://www.youtube.com/watch?v=aDivytGirWc&list=PLONUtVeiXPifDvdfQgMw_CRqQB_60ROZ8&index=2)
+[![Mac VirtualBox](https://img.youtube.com/vi/jDLoh_asQGg/0.jpg)](https://youtu.be/jDLoh_asQGg)
+
+[![Mac VMware Fusion Pro](https://i3.ytimg.com/vi/g8Sz0gFXO1w/hqdefault.jpg)](https://youtu.be/g8Sz0gFXO1w)
 
 
 
-### 1. Install VirtualBox
+
+### 1. Install VMware Workstation/Fusion
+
+VMware Workstation (for Windows/Linux) and VMware Fusion (for macOS) are hypervisors that allow you to run virtual machines. Follow the instructions below to install VMware for your operating system:
+
+- **Windows**: Download and install [VMware Workstation](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro).
+- **macOS**: Download and install [VMware Fusion](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Fusion).
+
+For detailed installation instructions, refer to the [VMware documentation](https://docs.vmware.com/).
+
+## 2. Download the Exasol Community Edition OVA File
+
+Go to the [Exasol Community Edition download page](https://www.exasol.com/free-signup-community-edition/).
+
+Download the OVA file to your local system. The file name will look something like: `Exasol_Community_Edition_v8.x.x.ova`
+
+## 3. Import the OVA File into VMware Workstation/Fusion
+
+### Open VMware Workstation/Fusion
+
+Launch VMware Workstation (Windows/Linux) or VMware Fusion (macOS).
+
+### Start the Import Process
+
+1. Click on **File > Open** in the top menu.
+2. Navigate to the location where you downloaded the OVA file.
+3. Select the OVA file and click **Open**.
+
+### Customize the Import Settings
+
+Review the default settings for the virtual machine:
+
+- **CPU and RAM**: If your host system allows, increase the vCPU and RAM for increased performance - otherwise leave the default settings (**4 vCPUs and 8 GB RAM**).
+- **Virtual Disk**: Ensure the virtual disk is set to **Store as a single file** for optimal performance.
+
+### Import the OVA
+
+1. Click **Import** to begin the process.
+2. Wait for VMware to import the OVA. This may take a few minutes.
+
+### Verify the Import
+
+Once the process is complete, the new virtual machine will appear in the VMware list.
+
+
+## 4. Start the Virtual Machine
+
+Once the import is complete, the new virtual machine will appear in the list of available VMs in VMware.
+
+1. Select the VM and click **Power On**.
+2. The VM will boot up, and it will automatically log in to the system.
+
+If prompted to log in manually, use the following credentials:
+- **Username**: `exasol`
+- **Password**: `exasol`
+
+### ⚠️ IMPORTANT: Update the Database IP Address
+
+After the VM has fully booted, you **must** run the **Update IPs** desktop application to refresh the IP address of the Exasol database. This ensures that clients can connect using the latest network settings.
+
+#### To update the IP:
+1. Open the **Update IPs** application.
+2. Wait until the script finishes.
+3. Verify the displayed IP and confirm the update in the **DB Status Monitor**.
+
+🚨 **Failure to complete this step may result in connection issues.** 🚨
+
+## Notes
+
+- If you encounter any issues during installation, refer to the [VMware documentation](https://docs.vmware.com/).
+- Ensure your system meets the minimum requirements to run the Exasol Community Edition:
+  - **4 vCPUs**
+  - **8 GB RAM**
+
+### 2. Install VirtualBox
 
 VirtualBox is a hypervisor that allows you to run virtual machines. Follow the instructions below to install VirtualBox for your operating system:
 
@@ -101,6 +182,20 @@ Review the default settings for the virtual machine:
 
 Once the process is complete, the new virtual machine will appear in the VirtualBox list.
 
+### Edit the VM Settings
+
+Before starting the VM, update the following settings to ensure compatibility:
+
+1. **Graphics Controller**: Set to **VMSVGA**.
+2. **EFI Support**: Check **Enable EFI**.
+3. **Boot Order**:
+   - Uncheck **Floppy** and **Optical**.
+   - Move **Hard Disk** to the top.
+4. **Chipset**: Change to **ICH9**.
+
+After making these changes, save the settings and proceed with starting the VM.
+
+
 ## 4. Start the Virtual Machine
 
 Once the import is complete, the new virtual machine will appear in the list of available VMs in VirtualBox.
@@ -111,6 +206,18 @@ Once the import is complete, the new virtual machine will appear in the list of 
 If prompted to log in manually, use the following credentials:
 - Username: exasol
 - Password: exasol
+
+### ⚠️ IMPORTANT: Update the Database IP Address
+
+After the VM has fully booted, you **must** run the **Update IPs** desktop application to refresh the IP address of the Exasol database. This ensures that clients can connect using the latest network settings.
+
+#### To update the IP:
+1. Open the **Update IPs** application.
+2. Wait until the script finishes.
+3. Verify the displayed IP and confirm the update in the **DB Status Monitor**.
+
+🚨 **Failure to complete this step may result in connection issues.** 🚨
+
 
 ## Notes
 
