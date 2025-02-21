@@ -217,11 +217,23 @@ Once the VM has booted, **run the Update IPs desktop application**.
 ### 2. Run Your First Query
 
 1. Navigate to the **Scripts** tab.
-2. Open the script **`01 - TPC-H 1 GB Setup.sql`**.
-3. Follow the instructions.
-4. Open **`02 - TPC-H 1 GB Queries.sql`** and start querying!
+2. Open the script **`01 - TPC-H 1 GB Setup.sql`** and follow the instructions.
+3. Open **`02 - TPC-H 1 GB Queries.sql`** to run queries on the 1 GB dataset.
+4. Open **`03 - TPC-H 10 GB Queries.sql`** to test queries on a larger dataset.
 
-📌 **Note**: The **DbVisualizer Community Edition** allows only **one SQL Worksheet** at a time.
+### Migrate Your Data to Exasol
+
+After exploring the sample queries, navigate to the **Database Migration** folder to find scripts that help migrate data from various RDBMS systems to Exasol.
+
+- Use the available migration scripts to recreate the source database schemas, tables, and import your data.
+- Follow the instructions within the scripts for a smooth migration process.
+
+This will help you get hands-on experience with **Exasol’s high-speed and easy migration capabilities**.
+
+
+📌 **Note**: The **DbVisualizer Community Edition** allows only **one SQL Worksheet** at a time.  
+You can register for a **free 1-month Pro trial** to unlock additional features.
+
 
 ---
 
